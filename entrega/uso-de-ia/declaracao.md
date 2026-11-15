@@ -1,4 +1,4 @@
-# Declaração de Uso de IA
+﻿# Declaração de Uso de IA
 
 ## Ferramenta e modelo usados
 - **Ferramenta**: Antigravity CLI
@@ -16,7 +16,7 @@
   - `src/onfly_report/services/report_builder.py` (corrigiu a ordenação de `top_hotels` para `(-item[1]["amount"], item[0])`);
   - `src/onfly_report/repositories/csv_reservation_repository.py` e `src/onfly_report/repositories/csv_rate_repository.py` (removeu o limite artificial de 200 linhas e adotou `encoding="utf-8-sig"`).
 - Adicionou a suíte de testes extras em `tests/test_extra_validation.py` (testes unitários sem I/O com fakes em memória, validação de `InputFileError`, bordas de arredondamento `ROUND_HALF_UP`, virada de ano, UTF-8 BOM e códigos de saída do CLI), mantendo os testes originais e os arquivos em `data/` inalterados.
-- Executou o CLI sobre `data/reservas_hoteis.csv` (`output/report.json`) e `data/exemplo-validacao.csv` (`output/exemplo.json`), validou a amostra campo a campo contra o `README.md`, rodou `pytest -q` (`45 passed in 5.20s`) e `ruff check src tests` (`All checks passed!`), submeteu a revisão ao subagente `backend-reviewer` e redigiu os documentos em `entrega/`.
+- Executou o CLI sobre `data/reservas_hoteis.csv` (`output/report.json`) e `data/exemplo-validacao.csv` (`output/exemplo.json`), validou a amostra campo a campo contra o `README.md`, rodou `pytest -q` (`45 passed` na primeira rodada; depois, com a auditoria extra, `70 passed`) e `ruff check src tests` (`All checks passed!`), submeteu a revisão ao subagente `backend-reviewer` e redigiu os documentos em `entrega/`.
 
 ## O que eu (o candidato) fiz
 
@@ -34,3 +34,4 @@
 - Li o diff completo e conferi que tests/ e data/ originais
   não foram alterados.
 - Publiquei o repositório e exportei as sessões.
+
